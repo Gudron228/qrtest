@@ -1,5 +1,5 @@
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, BooleanField, SubmitField, TextAreaField, EmailField
+from wtforms import StringField, SubmitField, TextAreaField, EmailField, IntegerField
 from wtforms.validators import DataRequired, ValidationError, EqualTo
 
 
@@ -16,6 +16,13 @@ class ContactForm(FlaskForm):
     org = StringField('Введите название организации:', validators=[DataRequired()])
     email = EmailField('Введите email:', validators=[DataRequired()])
     url = StringField('Введите url сайта:', validators=[DataRequired()])
+    submit = SubmitField('Закодировать')
+
+
+class ServiceForm(FlaskForm):
+    service = StringField('Введите название услуги:', validators=[DataRequired()])
+    food = StringField('Введите название блюда', validators=[DataRequired()])
+    price = IntegerField('Введите цену блюда', validators=[DataRequired()])
     submit = SubmitField('Закодировать')
 
 
