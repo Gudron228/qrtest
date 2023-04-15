@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Заебало</title>
-</head>
-<body>
-<form action="/index" method="post" novalidate>
-            {{ form.hidden_tag() }}
-        <p>
-            {{ form.text.label }}<br>
-            {{ form.text(size=400) }}
-        </p>
-    <p>{{ form.submit() }}</p>
-    </form>
-</body>
-</html>
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+    <h1>Пердъявите qr-код</h1>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{{ super() }}
+<form action="/qrtext" method="post" novalidate>
+           {{ form.hidden_tag() }}
+    <p>
+        {{ form.subject.label }}<br>
+        {{ form.subject(size=64) }}
+    </p>
+
+        <p>
+            {{ form.text.label }}<br>
+            {{ form.text(size=400) }}
+        </p>
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}
