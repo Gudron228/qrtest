@@ -16,6 +16,18 @@
             {{ form.phone.label }}<br>
             {{ form.phone(size=11) }}
         </p>
+    <p>
+            {{ form.org.label }}<br>
+            {{ form.org(size=32) }}
+        </p>
+    <p>
+            {{ form.email.label }}<br>
+            {{ form.email(size=32) }}
+        </p>
+    <p>
+            {{ form.url.label }}<br>
+            {{ form.url(size=64) }}
+        </p>
         <p>{{ form.submit() }}</p>
     </form>
 {% endblock %}

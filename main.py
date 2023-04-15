@@ -45,21 +45,21 @@ def qr_text():
 
 
 @app.route('/qr_contact', methods=['POST', 'GET'])
-#страница с qr-кодом vCard (пока не работает)
+#страница с qr-кодом vCard
 def qr_contact():
     form = ContactForm()
     if request.method == 'POST':
-        if len(request.form['first_name']) + len(request.form['last_name']) + len(request.form['phone']) > 600:
+        if len(request.form['first_name']) + len(request.form['last_name']) + len(request.form['phone']) > 203:
             return redirect(url_for('index'))
         s = f'''BEGIN:VCARD
-        VERSION:3.0
-        N:{request.form['last_name']};{request.form['first_name']}
-        FN:{request.form['last_name']} {request.form['first_name']}
-        ORG:EVenX
-        URL:URL HERE
-        EMAIL:SOME@EMAIL.COM
-        TEL;TYPE=VOICE,WORK,PREF:{request.form['phone']}
-        END:VCARD'''
+VERSION:3.0
+FN:{request.form['first_name']} {request.form['last_name']}
+N:{request.form['first_name']};{request.form['last_name']}
+EMAIL:{request.form['email']}
+TEL;TYPE=WORK,VOICE:{request.form['phone']}
+ORG:{request.form['org']}
+URL:{request.form['url']}
+END:VCARD'''
         qr = qrcode.QRCode(
             version=None,
             error_correction=qrcode.constants.ERROR_CORRECT_L,

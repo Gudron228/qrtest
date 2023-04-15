@@ -13,6 +13,9 @@ class ContactForm(FlaskForm):
     first_name = StringField('Введите имя:', validators=[DataRequired()])
     last_name = StringField('Введите фамилию:', validators=[DataRequired()])
     phone = StringField('Введите номер телефона:', validators=[DataRequired()])
+    org = StringField('Введите название организации:', validators=[DataRequired()])
+    email = EmailField('Введите email:', validators=[DataRequired()])
+    url = StringField('Введите url сайта:', validators=[DataRequired()])
     submit = SubmitField('Закодировать')
 
 
