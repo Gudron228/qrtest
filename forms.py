@@ -12,7 +12,7 @@ class QrTextForm(FlaskForm):
 class ContactForm(FlaskForm):
     first_name = StringField('Введите имя:', validators=[DataRequired()])
     last_name = StringField('Введите фамилию:', validators=[DataRequired()])
-    phone = StringField('Введите номер телеффона:', validators=[DataRequired()])
+    phone = StringField('Введите номер телефона:', validators=[DataRequired()])
     submit = SubmitField('Закодировать')
 
 

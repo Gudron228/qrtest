@@ -2,7 +2,7 @@
 
 {% block content %}
 {{ super() }}
-<form action="/qrtext" method="post" novalidate>
+<form action="/qr_text" method="post" novalidate>
            {{ form.hidden_tag() }}
     <p>
         {{ form.subject.label }}<br>
